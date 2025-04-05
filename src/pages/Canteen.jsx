@@ -26,10 +26,7 @@ const Canteen = () => {
           <p>Get meal suggestions based on your health profile and nutritional goals. AI recommends balanced diet options.</p>
         </div>
 
-        <div className="canteen-card">
-          <h3>🗣️ Real-Time Feedback</h3>
-          <p>Submit instant reviews and feedback using QR codes after each meal. Improve services with student insights.</p>
-        </div>
+       
       </div>
     </motion.div>
   );

@@ -26,10 +26,7 @@ const LostFound = () => {
           <p>Browse through recently found items posted by other students or staff in real-time.</p>
         </div>
 
-        <div className="lostfound-card">
-          <h3>🗺️ Map-Based View</h3>
-          <p>Use our integrated map to view where items were last seen or found across the campus zones.</p>
-        </div>
+        
       </div>
     </motion.div>
   );

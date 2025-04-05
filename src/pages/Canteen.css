@@ -27,12 +27,15 @@
   }
   
   .canteen-card {
-    background-color: #ffffff;
+    background-color: #f0fdf4;
     border-radius: 15px;
     padding: 25px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease;
+    border: 1px solid #bbf7d0;
   }
+  
+  
   
   .canteen-card:hover {
     transform: translateY(-5px);
