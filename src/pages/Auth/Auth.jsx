@@ -76,7 +76,7 @@ const Auth = ({ setShowLogin }) => {
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.6 }}
         >
-          {isLogin ? "Welcome Back 👋" : "Create Account"}
+          {isLogin ? "Welcome Back " : "Create Account"}
         </motion.h2>
 
         <form className="auth-form" onSubmit={handleSubmit}>
@@ -104,7 +104,7 @@ const Auth = ({ setShowLogin }) => {
             className="auth-input"
           />
           <button type="submit" className="auth-button">
-            {isLogin ? "Login 🚀" : "Sign Up ✨"}
+            {isLogin ? "Login " : "Sign Up "}
           </button>
         </form>
 
