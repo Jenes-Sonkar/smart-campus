@@ -7,10 +7,18 @@ const Auth = ({ setShowLogin }) => {
   const [isLogin, setIsLogin] = useState(true);
   const navigate = useNavigate();
 
+  // Function to toggle between login and signup mode
   const toggleMode = () => {
     setIsLogin(!isLogin);
   };
 
+  // Function to handle closing the login/signup form
+  const closeForm = () => {
+    setShowLogin(false); // Close the form
+    navigate("/"); // Redirect to homepage
+  };
+
+  // Function to handle form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -35,8 +43,8 @@ const Auth = ({ setShowLogin }) => {
 
       if (response.ok && responseData.success) {
         localStorage.setItem("token", responseData.token);
-        setShowLogin(false);       // Close auth popup
-        navigate("/");             
+        setShowLogin(false); // Close the form on successful login/signup
+        navigate("/"); // Redirect to homepage after successful login/signup
       } else {
         alert(responseData?.message || "Something went wrong. Please try again.");
       }
@@ -54,13 +62,21 @@ const Auth = ({ setShowLogin }) => {
       transition={{ duration: 0.6 }}
     >
       <div className="auth-card">
+        {/* Close button in the top-right corner */}
+        <button
+          className="auth-close-btn"
+          onClick={closeForm}
+        >
+          ✕
+        </button>
+
         <motion.h2
           className="auth-title"
           initial={{ x: -50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.6 }}
         >
-          {isLogin ? "Welcome Back " : "Create Account"}
+          {isLogin ? "Welcome Back 👋" : "Create Account"}
         </motion.h2>
 
         <form className="auth-form" onSubmit={handleSubmit}>
@@ -88,7 +104,7 @@ const Auth = ({ setShowLogin }) => {
             className="auth-input"
           />
           <button type="submit" className="auth-button">
-            {isLogin ? "Login " : "Sign Up "}
+            {isLogin ? "Login 🚀" : "Sign Up ✨"}
           </button>
         </form>
 
