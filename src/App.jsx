@@ -5,27 +5,37 @@ import Home from './pages/Home';
 import Canteen from './pages/Canteen';
 import LostFound from './pages/LostFound';
 import Scholarships from './pages/Scholarships';
-import './App.css';
 import Auth from './pages/Auth/Auth';
+import './App.css';
 
 const App = () => {
-  const [showLogin, setShowLogin] = useState(true);
+  const [showLogin, setShowLogin] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  // Check login status on mount
   useEffect(() => {
     const token = localStorage.getItem('token');
-    if (token) {
-      setShowLogin(false);
-    }
+    setIsLoggedIn(!!token);
   }, []);
 
   return (
     <Router>
-      <Navbar />
-      
-      {/* Auth Popup */}
-      {showLogin && <Auth setShowLogin={setShowLogin} />}
+      {/* Navbar with dynamic login/profile */}
+      <Navbar
+        setShowLogin={setShowLogin}
+        isLoggedIn={isLoggedIn}
+        setIsLoggedIn={setIsLoggedIn}
+      />
 
-      {/* Routes */}
+      {/* Auth Modal */}
+      {showLogin && (
+        <Auth
+          setShowLogin={setShowLogin}
+          setIsLoggedIn={setIsLoggedIn}
+        />
+      )}
+
+      {/* Application Routes */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/canteen" element={<Canteen />} />

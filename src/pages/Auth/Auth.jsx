@@ -1,24 +1,19 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./auth.css";
 import { motion } from "framer-motion";
+import "./auth.css";
 
-const Auth = ({ setShowLogin }) => {
+const Auth = ({ setShowLogin, setIsLoggedIn }) => {
   const [isLogin, setIsLogin] = useState(true);
   const navigate = useNavigate();
 
-  // Function to toggle between login and signup mode
-  const toggleMode = () => {
-    setIsLogin(!isLogin);
-  };
+  const toggleMode = () => setIsLogin(!isLogin);
 
-  // Function to handle closing the login/signup form
   const closeForm = () => {
-    setShowLogin(false); // Close the form
-    navigate("/"); // Redirect to homepage
+    setShowLogin(false);
+    navigate("/");
   };
 
-  // Function to handle form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -43,8 +38,9 @@ const Auth = ({ setShowLogin }) => {
 
       if (response.ok && responseData.success) {
         localStorage.setItem("token", responseData.token);
-        setShowLogin(false); // Close the form on successful login/signup
-        navigate("/"); // Redirect to homepage after successful login/signup
+        setIsLoggedIn(true); 
+        setShowLogin(false);
+        navigate("/");
       } else {
         alert(responseData?.message || "Something went wrong. Please try again.");
       }
@@ -61,14 +57,21 @@ const Auth = ({ setShowLogin }) => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
     >
-      <div className="auth-card">
-        {/* Close button in the top-right corner */}
-        <button
+      <motion.div
+        className="auth-card"
+        initial={{ scale: 0.9 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 0.3 }}
+      >
+        {/* Close button */}
+        <motion.button
           className="auth-close-btn"
           onClick={closeForm}
+          whileHover={{ scale: 1.2, rotate: 90 }}
+          transition={{ type: "spring", stiffness: 300 }}
         >
           ✕
-        </button>
+        </motion.button>
 
         <motion.h2
           className="auth-title"
@@ -112,7 +115,7 @@ const Auth = ({ setShowLogin }) => {
           {isLogin ? "Don't have an account?" : "Already a member?"}{" "}
           <span onClick={toggleMode}>{isLogin ? "Sign Up" : "Login"}</span>
         </p>
-      </div>
+      </motion.div>
     </motion.div>
   );
 };
