@@ -4,6 +4,38 @@ import './canteen.css';
 
 const Canteen = () => {
   const [expanded, setExpanded] = useState(false);
+  const [formData, setFormData] = useState({
+    season: '',
+    day: '',
+    holiday: 'no',
+    specialDay: 'no',
+    mealType: 'veg',
+  });
+  const [predictedDemand, setPredictedDemand] = useState('');
+  const [loading, setLoading] = useState(false); // Added
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSend = async () => {
+    setLoading(true);
+    setPredictedDemand('');
+    try {
+      const response = await fetch('http://localhost:5000/api/predict', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const data = await response.json();
+      setPredictedDemand(data.meal_demand);
+    } catch (error) {
+      console.error('Error sending data:', error);
+      setPredictedDemand('Something went wrong!');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <motion.div
@@ -26,19 +58,20 @@ const Canteen = () => {
           transition={{ layout: { duration: 0.4, ease: 'easeInOut' } }}
         >
           <div className="card-header">
-            <h3>📊 Food Demand Prediction</h3>
-            {expanded && (
-              <button
-                className="close-btn"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setExpanded(false);
-                }}
-              >
-                ❌
-              </button>
-            )}
-          </div>
+  <h3>📊 Food Demand Prediction</h3>
+  {expanded && (
+    <button
+      className="close-btn"
+      onClick={(e) => {
+        e.stopPropagation();
+        setExpanded(false);
+        setPredictedDemand('');
+      }}
+    >
+      ❌
+    </button>
+  )}
+</div>
 
           {!expanded && (
             <motion.p
@@ -59,34 +92,62 @@ const Canteen = () => {
             >
               <label>
                 Season:
-                <input type="text" placeholder="e.g. Summer" />
+                <input
+                  type="text"
+                  name="season"
+                  value={formData.season}
+                  onChange={handleChange}
+                  placeholder="e.g. Summer"
+                />
               </label>
               <label>
                 Day:
-                <input type="text" placeholder="e.g. Monday" />
+                <input
+                  type="text"
+                  name="day"
+                  value={formData.day}
+                  onChange={handleChange}
+                  placeholder="e.g. Monday"
+                />
               </label>
               <label>
                 Holiday:
-                <select>
+                <select name="holiday" value={formData.holiday} onChange={handleChange}>
                   <option value="no">No</option>
                   <option value="yes">Yes</option>
                 </select>
               </label>
               <label>
                 Special Day:
-                <select>
+                <select name="specialDay" value={formData.specialDay} onChange={handleChange}>
                   <option value="no">No</option>
                   <option value="yes">Yes</option>
                 </select>
               </label>
               <label>
                 Meal Type:
-                <select>
+                <select name="mealType" value={formData.mealType} onChange={handleChange}>
                   <option value="veg">Veg</option>
                   <option value="non-veg">Non-Veg</option>
                   <option value="special">Special</option>
                 </select>
               </label>
+
+              <button className="send-btn" onClick={handleSend}>Send</button>
+
+              {loading && <div className="spinner"></div>}
+
+              {predictedDemand && (
+                <div className="output-pane">
+                  <label>Predicted Meal Demand:</label>
+                  <textarea
+                    className="prediction-output"
+                    value={predictedDemand}
+                    readOnly
+                    rows={3}
+                  />
+                </div>
+              )}
             </motion.div>
           )}
         </motion.div>
