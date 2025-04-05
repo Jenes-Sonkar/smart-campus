@@ -1,171 +1,159 @@
 .canteen-container {
-    padding: 60px 20px;
-    max-width: 1200px;
-    margin: auto;
-  }
-  
-  .section-title {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #1e3a8a;
-  }
-  
-  .section-description {
-    text-align: center;
-    max-width: 800px;
-    margin: auto;
-    color: #555;
-    font-size: 1.1rem;
-    margin-bottom: 40px;
-  }
-  
-  .canteen-grid {
-    display: grid;
-    gap: 30px;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  }
-  
-  .canteen-grid.expanded-view {
-    grid-template-columns: 1fr;
-  }
-  
-  .canteen-card {
-    background-color: #f0fdf4;
-    border-radius: 15px;
-    padding: 25px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    transition: all 0.4s ease;
-    border: 1px solid #bbf7d0;
-    position: relative;
-    overflow: hidden;
-    will-change: transform, height;
-  }
-  
-  .canteen-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .canteen-card h3 {
-    color: #111827;
-    margin-bottom: 10px;
-    font-size: 1.3rem;
-  }
-  
-  .canteen-card p {
-    color: #4b5563;
-    line-height: 1.5;
-  }
-  
-  /* Expanded Card Styling */
-  .canteen-card.expanded {
-    background-color: #f0fdf4;
-    padding: 30px;
-    border: 2px solid #86efac;
-  }
-  
-  /* Form section inside expanded card */
-  .form-section {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    transition: opacity 0.4s ease-in-out;
-  }
-  
-  .form-section label {
-    display: flex;
-    flex-direction: column;
-    font-size: 1rem;
-    color: #111827;
-  }
-  
-  .form-section input,
-  .form-section select {
-    margin-top: 5px;
-    padding: 8px 10px;
-    border: 1px solid #bbf7d0;
-    border-radius: 8px;
-    font-size: 1rem;
-    background-color: white;
-    color: black; /* Set dropdown text to black */
-  }
-  
-  /* Center the card heading in expanded mode */
-  .card-header.center-title {
-    justify-content: center;
-  }
-  
-  /* Close Button */
-  .card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .close-btn {
-    background: transparent;
-    border: none;
-    color: #111827;
-    font-size: 1.3rem;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-  }
-  
-  .close-btn:hover {
-    transform: scale(1.2);
-  }
-  
-  .send-btn {
-    margin-top: 10px;
-    background-color: #4ade80;
-    color: white;
-    padding: 10px 18px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .send-btn:hover {
-    background-color: #22c55e;
-  }
-  
-  /* Output textarea styling */
-  .output-pane {
-    margin-top: 15px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  
-  .prediction-output {
-    background-color: #e0fce4;
-    border: 1px solid #bbf7d0;
-    border-radius: 8px;
-    padding: 10px;
-    font-size: 1rem;
-    color: #065f46;
-    resize: none;
-    outline: none;
-  }
-  
-  /* Spinner */
-  .spinner {
-    margin-top: 15px;
-    width: 32px;
-    height: 32px;
-    border: 4px solid #a7f3d0;
-    border-top: 4px solid #22c55e;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    align-self: center;
-  }
-  
-  @keyframes spin {
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1e3a8a;
+}
+
+.section-description {
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+.canteen-grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.canteen-grid.expanded-view {
+  grid-template-columns: 1fr;
+}
+
+.canteen-card {
+  background-color: #f0fdf4;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+  border: 1px solid #bbf7d0;
+  position: relative;
+}
+
+.canteen-card:hover {
+  transform: translateY(-5px);
+}
+
+.canteen-card h3 {
+  color: #111827;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.canteen-card p {
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+/* Expanded Card Styling */
+.canteen-card.expanded {
+  background-color: #f0fdf4;
+  padding: 30px;
+  border: 2px solid #86efac;
+}
+
+/* Form section inside expanded card */
+.form-section {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-section label {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  color: #111827;
+}
+
+.form-section input,
+.form-section select {
+  margin-top: 5px;
+  padding: 8px 10px;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: white;
+}
+
+/* Close Button */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  color: #111827;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.close-btn:hover {
+  transform: scale(1.2);
+}
+
+.canteen-card {
+  background-color: #f0fdf4;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  border: 1px solid #bbf7d0;
+  position: relative;
+  overflow: hidden;
+  will-change: transform, height;
+}
+
+.canteen-card.expanded {
+  padding: 30px;
+  border: 2px solid #86efac;
+}
+
+.form-section input,
+.form-section select {
+  color: black;
+  background-color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.canteen-grid.expanded-view {
+  grid-template-columns: 1fr;
+}
+
+.output-box {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.output-box {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-left: 4px solid #4caf50;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #333;
+}

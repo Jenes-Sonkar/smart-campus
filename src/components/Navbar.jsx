@@ -51,7 +51,7 @@ const Navbar = ({ setShowLogin, isLoggedIn, setIsLoggedIn }) => {
         <div className="links">
           <Link to="/">Home</Link>
           <Link to="/canteen">Canteen</Link>
-          <Link to="/lostfound">Lost & Found</Link>
+          <Link to="/lost-found">Lost & Found</Link>
           <Link to="/scholarships">Scholarships</Link>
         </div>
       </div>
