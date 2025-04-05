@@ -37,11 +37,11 @@ const App = () => {
 
       {/* Application Routes */}
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/canteen" element={<Canteen />} />
-        <Route path="/lostfound" element={<LostFound />} />
-        <Route path="/scholarships" element={<Scholarships />} />
-      </Routes>
+  <Route path="/" element={<Home />} />
+  <Route path="/lost-found" element={<LostFound />} />
+  <Route path="/canteen" element={<Canteen />} />
+  <Route path="/scholarships" element={<Scholarships />} />
+</Routes>
     </Router>
   );
 };

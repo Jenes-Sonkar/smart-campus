@@ -1,52 +1,138 @@
 .lostfound-container {
-    padding: 60px 20px;
-    max-width: 1200px;
-    margin: auto;
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.section-description {
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.lostfound-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  transition: all 0.5s ease;
+}
+
+.lostfound-grid.expanded {
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lostfound-card {
+  background: #f4f4f4;
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  position: relative;
+}
+
+.lostfound-card:hover {
+  transform: scale(1.05);
+  background-color: #fffbe6;
+}
+
+.lostfound-card.active {
+  width: 100%;
+  max-width: 600px;
+  transform: scale(1.02);
+  background-color: #fff;
+  z-index: 10;
+}
+
+.lostfound-card.hidden {
+  display: none;
+}
+
+.lostfound-form {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  animation: bounceIn 0.5s ease-out;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
   }
-  
-  .section-title {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #065f46;
+  60% {
+    transform: scale(1.05);
+    opacity: 1;
   }
-  
-  .section-description {
-    text-align: center;
-    max-width: 800px;
-    margin: auto;
-    color: #444;
-    font-size: 1.1rem;
-    margin-bottom: 40px;
+  100% {
+    transform: scale(1);
   }
-  
-  .lostfound-grid {
-    display: grid;
-    gap: 30px;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  }
-  
-  .lostfound-card {
-    background-color: #f0fdf4;
-    border-radius: 15px;
-    padding: 25px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease;
-    border: 1px solid #bbf7d0;
-  }
-  
-  .lostfound-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .lostfound-card h3 {
-    color: #064e3b;
-    margin-bottom: 10px;
-    font-size: 1.3rem;
-  }
-  
-  .lostfound-card p {
-    color: #334155;
-    line-height: 1.5;
-  }
-  
+}
+
+.lostfound-form label {
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.lostfound-form input[type="text"],
+.lostfound-form input[type="tel"],
+.lostfound-form input[type="file"],
+.lostfound-form textarea {
+  padding: 0.6rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background-color: white;
+  color: black;
+  font-size: 1rem;
+}
+
+.lostfound-form textarea {
+  resize: vertical;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.form-buttons button {
+  flex: 1;
+  padding: 0.6rem;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form-buttons button:hover {
+  background-color: #005fa3;
+}
+
+.close-btn {
+  position: absolute;
+  top: 0.8rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}

@@ -124,10 +124,36 @@
   border: 2px solid #86efac;
 }
 
-.form-section {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  transition: opacity 0.4s ease-in-out;
+.form-section input,
+.form-section select {
+  color: black;
+  background-color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.canteen-grid.expanded-view {
+  grid-template-columns: 1fr;
+}
+
+.output-box {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.output-box {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-left: 4px solid #4caf50;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #333;
 }
