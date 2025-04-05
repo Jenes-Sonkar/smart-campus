@@ -1,0 +1,52 @@
+.lostfound-container {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #065f46;
+  }
+  
+  .section-description {
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+    color: #444;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+  }
+  
+  .lostfound-grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  .lostfound-card {
+    background-color: #f0fdf4;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+    border: 1px solid #bbf7d0;
+  }
+  
+  .lostfound-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .lostfound-card h3 {
+    color: #064e3b;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+  }
+  
+  .lostfound-card p {
+    color: #334155;
+    line-height: 1.5;
+  }
+  

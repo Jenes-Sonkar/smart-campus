@@ -1,0 +1,51 @@
+.canteen-container {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1e3a8a;
+  }
+  
+  .section-description {
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+    color: #555;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+  }
+  
+  .canteen-grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  .canteen-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+  }
+  
+  .canteen-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .canteen-card h3 {
+    color: #111827;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+  }
+  
+  .canteen-card p {
+    color: #4b5563;
+    line-height: 1.5;
+  }
+  
