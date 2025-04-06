@@ -16,7 +16,7 @@ const missingItems = [
     },
     {
       id: 3,
-      image: 'https://images.unsplash.com/photo-1598550430065-cf8cb4cc1cbf?auto=format&fit=crop&w=500&q=80', // Phone
+      image: 'https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=500&q=80', // Phone
       date: '2025-04-01',
       location: 'Hostel Block B',
     },
