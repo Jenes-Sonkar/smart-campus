@@ -1,4 +1,3 @@
-// scholarship.jsx
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import './scholarships.css';
@@ -59,9 +58,9 @@ const Scholarships = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
             >
-              <label>
+               <label>
                 Name:
-                <input type="text" placeholder="Enter your name" />
+                <input type="text" placeholder="Enter your name:" />
               </label>
               <label>
                 GPA:
@@ -79,9 +78,7 @@ const Scholarships = () => {
                 Family Income:
                 <input type="text" placeholder="e.g. 2,00,000 INR/year" />
               </label>
-              <button className="submit-btn" onClick={handleSubmit}>
-                Submit
-              </button>
+              <button className="submit-btn" onClick={handleSubmit}>Submit</button>
 
               {output && (
                 <motion.div
