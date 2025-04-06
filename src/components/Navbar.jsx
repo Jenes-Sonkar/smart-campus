@@ -6,7 +6,6 @@ import profileIcon from '../assets/profile.png';
 import authIcon from '../assets/auth.png';
 
 const Navbar = ({ setShowLogin, isLoggedIn, setIsLoggedIn }) => {
-
   const handleLogout = () => {
     localStorage.removeItem('token');
     setIsLoggedIn(false);
@@ -53,6 +52,7 @@ const Navbar = ({ setShowLogin, isLoggedIn, setIsLoggedIn }) => {
           <Link to="/canteen">Canteen</Link>
           <Link to="/lost-found">Lost & Found</Link>
           <Link to="/scholarships">Scholarships</Link>
+          <Link to="/missing-item">Missing Gallery</Link> {/* ✅ Added */}
         </div>
       </div>
     </motion.nav>

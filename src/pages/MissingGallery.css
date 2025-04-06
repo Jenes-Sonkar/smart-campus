@@ -1,0 +1,60 @@
+.missing-gallery-container {
+    padding: 2rem;
+    margin-left: 2rem;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .gallery-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+  }
+  
+  .missing-gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .missing-card {
+    position: relative;
+    width: 280px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    border: 3px solid transparent;
+    background: linear-gradient(#fff, #fff) padding-box,
+                linear-gradient(to right, #6a11cb, #2575fc) border-box;
+    transition: transform 0.4s ease;
+  }
+  
+  .missing-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .missing-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+  }
+  
+  .missing-hover-info {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    width: 100%;
+    padding: 0.8rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+    font-size: 0.95rem;
+  }
+  
+  .missing-card:hover .missing-hover-info {
+    transform: translateY(0%);
+  }
+  

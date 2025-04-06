@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Canteen from './pages/Canteen';
 import LostFound from './pages/LostFound';
 import Scholarships from './pages/Scholarships';
+import MissingGallery from './pages/MissingGallery'; // ✅ Import MissingGallery page
 import Auth from './pages/Auth/Auth';
 import './App.css';
 
@@ -37,11 +38,12 @@ const App = () => {
 
       {/* Application Routes */}
       <Routes>
-  <Route path="/" element={<Home />} />
-  <Route path="/lost-found" element={<LostFound />} />
-  <Route path="/canteen" element={<Canteen />} />
-  <Route path="/scholarships" element={<Scholarships />} />
-</Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/lost-found" element={<LostFound />} />
+        <Route path="/canteen" element={<Canteen />} />
+        <Route path="/scholarships" element={<Scholarships />} />
+        <Route path="/missing-item" element={<MissingGallery />} /> {/* ✅ New Route */}
+      </Routes>
     </Router>
   );
 };
