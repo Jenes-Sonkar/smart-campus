@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import './Home.css';
+import "./home.css";
+
 
 const features = [
   { title: 'Smart Canteen', desc: 'Order food online from campus canteen.', path: '/canteen' },

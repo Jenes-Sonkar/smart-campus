@@ -1,13 +1,32 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import './canteen.css';
+import './Canteen.css';
+import axios from 'axios';
 
 const Canteen = () => {
   const [expandedCard, setExpandedCard] = useState(null);
   const [foodOutput, setFoodOutput] = useState('');
 
-  const handleFoodSubmit = () => {
-    setFoodOutput('Predicted demand: 420 meals for today based on inputs.');
+  const [formData, setFormData] = useState({
+    season: '',
+    day_of_week: '',
+    is_holiday: 'No',
+    special_event: 'No',
+    menu_type: '',
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleFoodSubmit = async () => {
+    try {
+      const response = await axios.post('http://localhost:5000/canteen/predict-demand', formData);
+      setFoodOutput(`Predicted demand: ${response.data.predicted_meal_demand} meals for today based on inputs.`);
+    } catch (error) {
+      console.error('Prediction error:', error);
+      setFoodOutput('Error predicting food demand. Please try again.');
+    }
   };
 
   return (
