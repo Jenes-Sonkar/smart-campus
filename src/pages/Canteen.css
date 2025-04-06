@@ -20,24 +20,34 @@
   margin-bottom: 40px;
 }
 
+/* Centered single card layout */
 .canteen-grid {
-  display: grid;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
   gap: 30px;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin: auto;
 }
 
+/* Optional: can be kept or removed */
 .canteen-grid.expanded-view {
   grid-template-columns: 1fr;
 }
 
+/* Card styling */
 .canteen-card {
   background-color: #f0fdf4;
   border-radius: 15px;
   padding: 25px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
+  transition: all 0.4s ease;
   border: 1px solid #bbf7d0;
   position: relative;
+  overflow: hidden;
+  will-change: transform, height;
+  max-width: 600px;
+  width: 100%;
 }
 
 .canteen-card:hover {
@@ -55,14 +65,35 @@
   line-height: 1.5;
 }
 
-/* Expanded Card Styling */
+/* Expanded card */
 .canteen-card.expanded {
   background-color: #f0fdf4;
   padding: 30px;
   border: 2px solid #86efac;
 }
 
-/* Form section inside expanded card */
+/* Header with close button */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Close button */
+.close-btn {
+  background: transparent;
+  border: none;
+  color: #111827;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.close-btn:hover {
+  transform: scale(1.2);
+}
+
+/* Form inside card */
 .form-section {
   margin-top: 20px;
   display: flex;
@@ -80,74 +111,15 @@
 .form-section input,
 .form-section select {
   margin-top: 5px;
-  padding: 8px 10px;
-  border: 1px solid #bbf7d0;
-  border-radius: 8px;
-  font-size: 1rem;
-  background-color: white;
-}
-
-/* Close Button */
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.close-btn {
-  background: transparent;
-  border: none;
-  color: #111827;
-  font-size: 1.3rem;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.close-btn:hover {
-  transform: scale(1.2);
-}
-
-.canteen-card {
-  background-color: #f0fdf4;
-  border-radius: 15px;
-  padding: 25px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.4s ease;
-  border: 1px solid #bbf7d0;
-  position: relative;
-  overflow: hidden;
-  will-change: transform, height;
-}
-
-.canteen-card.expanded {
-  padding: 30px;
-  border: 2px solid #86efac;
-}
-
-.form-section input,
-.form-section select {
-  color: black;
-  background-color: white;
   padding: 8px 12px;
   border-radius: 8px;
   border: 1px solid #ccc;
   font-size: 1rem;
+  background-color: white;
+  color: black;
 }
 
-.canteen-grid.expanded-view {
-  grid-template-columns: 1fr;
-}
-
-.output-box {
-  margin-top: 1rem;
-  padding: 1rem;
-  background-color: #f4f4f4;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  font-size: 1rem;
-  color: #333;
-}
-
+/* Output box after submission */
 .output-box {
   margin-top: 1rem;
   padding: 1rem;
