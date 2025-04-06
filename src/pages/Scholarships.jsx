@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import './scholarships.css';
+import './Scholarships.css';
 
 const Scholarships = () => {
   const [expanded, setExpanded] = useState(false);

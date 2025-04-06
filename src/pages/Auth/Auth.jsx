@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import "./auth.css";
+import "./Auth.css";
 
 const Auth = ({ setShowLogin, setIsLoggedIn }) => {
   const [isLogin, setIsLogin] = useState(true);
@@ -23,7 +23,9 @@ const Auth = ({ setShowLogin, setIsLoggedIn }) => {
       name: formData.get("name"),
     };
 
-    const url = isLogin ? "/api/login" : "/api/register";
+    const url = isLogin
+      ? "http://localhost:5000/login"
+      : "http://localhost:5000/register";
 
     try {
       const response = await fetch(url, {

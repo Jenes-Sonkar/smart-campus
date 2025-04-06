@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import './lostfound.css';
+import './LostFound.css';
 
 const LostFound = () => {
   const [showReportForm, setShowReportForm] = useState(false);
