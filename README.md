@@ -1,26 +1,50 @@
-Smart Campus Management System (Backend Project)
-🔹 Summary
+🎓 Smart Campus Management System
+🔹 Overview
 
-The Smart Campus System is a Flask-based backend that automates daily campus operations like canteen meal demand prediction, lost & found tracking, and scholarship eligibility.
+A Flask-based backend application to automate campus services like:
+
+🍴 Canteen Meal Prediction – reduce food wastage
+
+🎒 Lost & Found Tracking – easy reporting & retrieval
+
+🎓 Scholarship Eligibility – rule-based prediction
+
+📝 Student Feedback – structured storage & analysis
 
 🔹 My Contribution
 
-Designed RESTful APIs using Flask Blueprints with MVC structure.
+✅ Built RESTful APIs with Flask + Blueprints (MVC structure)
 
-Used SQLAlchemy + MySQL for database modeling and optimized queries to keep response times under 200ms.
+✅ Designed MySQL database with SQLAlchemy ORM
 
-Implemented JWT authentication for secure access to APIs.
+✅ Optimized queries → API response time <200ms
 
-Integrated a machine learning model with backend routes for real-time meal demand prediction.
+✅ Added JWT authentication for secure access
 
-Deployed APIs for easy integration with mobile/web frontends.
+✅ Integrated ML model with API routes for real-time predictions
 
 🔹 Tech Stack
 
-Backend: Python (Flask), SQLAlchemy, MySQL
+Backend: Python (Flask), SQLAlchemy
 
-Auth: JWT Tokens
+Database: MySQL
 
-ML Integration: Scikit-learn / Pandas
+Authentication: JWT Tokens
 
-Architecture: RESTful API + MVC
+Machine Learning: Pandas, Scikit-learn
+
+Architecture: RESTful API (modular with Blueprints)
+
+🔹 Workflow (Backend Focused)
+
+📱 User sends request (JSON) via app
+
+🌐 Flask API receives & routes request
+
+🔑 JWT authentication validates user
+
+🗄️ SQLAlchemy queries MySQL database
+
+🤖 ML model runs prediction (if required)
+
+⚡ API responds in JSON under 200ms
